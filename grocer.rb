@@ -1,6 +1,4 @@
 def find_item_by_name_in_collection(name, collection)
-
-      
   collection.map do |element|
     if element[:item]==name
       return element
@@ -33,6 +31,9 @@ def consolidate_cart(cart)
       i+=1
     end
     v[:count]=count
+  end
+  cart_result.map do |ahash|
+    ahash[1].delete(:item)
   end
   cart_result
 end
